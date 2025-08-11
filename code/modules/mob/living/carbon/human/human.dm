@@ -135,7 +135,7 @@
 				stat("Vitae:", VDL.vitae)
 		else
 			var/datum/antagonist/vampire/VD = mind.has_antag_datum(/datum/antagonist/vampire)
-			if(VD)
+			if(VD && VD.wretch_antag)
 				if(statpanel("Stats"))
 					stat("Vitae:", VD.vitae)
 		if((mind.assigned_role == "Orthodoxist") || (mind.assigned_role == "Inquisitor"))
