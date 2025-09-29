@@ -21,25 +21,9 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/survival/cloth
-	name = "cloth (2 fibers)"
+	name = "cloth"
 	result = /obj/item/natural/cloth
 	reqs = list(/obj/item/natural/fibers = 2)
-	tools = list(/obj/item/needle)
-	skillcraft = /datum/skill/misc/sewing
-	verbage_simple = "sew"
-	verbage = "sews"
-	craftdiff = 0
-
-/datum/crafting_recipe/roguetown/survival/cloth5x
-	name = "cloth 5x (10 fibers)"
-	result = list(
-		/obj/item/natural/cloth,
-		/obj/item/natural/cloth,
-		/obj/item/natural/cloth,
-		/obj/item/natural/cloth,
-		/obj/item/natural/cloth,
-		)
-	reqs = list(/obj/item/natural/fibers = 10)
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
 	verbage_simple = "sew"
@@ -63,7 +47,7 @@
 	verbage = "unties"
 
 /datum/crafting_recipe/roguetown/survival/clothsash
-	name = "fine sash (3 cloth, 1 silk)"
+	name = "fine sash"
 	result = /obj/item/storage/belt/rogue/leather/sash
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
@@ -134,7 +118,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/survival/bag
-	name = "bag (1 fibers, 1 cloth)"
+	name = "bag"
 	result = /obj/item/storage/roguebag/crafted
 	reqs = list(
 		/obj/item/natural/fibers = 1,
@@ -143,26 +127,8 @@
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
 
-/datum/crafting_recipe/roguetown/survival/bagx5
-	name = "bag x5 (5 fibers, 5 cloth)"
-	result = list(
-		/obj/item/storage/roguebag/crafted,
-		/obj/item/storage/roguebag/crafted,
-		/obj/item/storage/roguebag/crafted,
-		/obj/item/storage/roguebag/crafted,
-		/obj/item/storage/roguebag/crafted,
-		)
-	reqs = list(
-		/obj/item/natural/fibers = 5,
-		/obj/item/natural/cloth = 5,
-		)
-	tools = list(/obj/item/needle)
-	skillcraft = /datum/skill/misc/sewing
-	req_table = FALSE
-
 /obj/item/storage/roguebag/crafted
 	sellprice = 4
-
 
 /datum/crafting_recipe/roguetown/survival/bait
 	name = "bait"
@@ -440,7 +406,7 @@
 
 // Improvised surgey tools. They go here for now (TM)
 /datum/crafting_recipe/roguetown/survival/improvisedsaw
-	name = "improvised surgery saw (1 fiber + 1 stone + 1 stick)"
+	name = "improvised surgery saw"
 	result = /obj/item/rogueweapon/surgery/saw/improv
 	reqs = list(
 		/obj/item/natural/fibers = 1,
@@ -459,7 +425,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/survival/improvisedhemo
-	name = "improvised clamp (1 fiber + 2 sticks)"
+	name = "improvised clamp"
 	result = /obj/item/rogueweapon/surgery/hemostat/improv
 	reqs = list(
 		/obj/item/natural/fibers = 1,
@@ -488,7 +454,7 @@
 
 
 /datum/crafting_recipe/roguetown/survival/cheele
-	name = "cheele (1x)"
+	name = "cheele"
 	result = list(
 		/obj/item/natural/worms/leech/cheele
 		)
