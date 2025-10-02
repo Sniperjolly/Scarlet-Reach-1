@@ -77,7 +77,6 @@
 #define ADMIN_PUNISHMENT_CBT "CBT"
 #define ADMIN_PUNISHMENT_NECKSNAP "Snap Neck"
 #define ADMIN_PUNISHMENT_LIAM "Trey Liam'd"
-#define ADMIN_PUNISHMENT_DIVINE_WRATH "Divine Wrath"
 
 #define AHELP_ACTIVE 1
 #define AHELP_CLOSED 2
