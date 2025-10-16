@@ -148,7 +148,7 @@
 //T2, Abyssal Healing. Totally stole most of this from lesser heal.
 /obj/effect/proc_holder/spell/invoked/abyssheal
 	name = "Abyssal Healing"
-	desc = "Invoke Abyssor's dream to provide a more potent heal to a target. More potent near water."
+	desc = "Invoke Abyssor's dream to provide a more potent heal to a target. Stronger near water."
 	overlay_state = "thebends"
 	releasedrain = 15
 	chargedrain = 0
