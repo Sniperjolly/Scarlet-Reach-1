@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt/sacred_flame_rogue
 	name = "Sacred Flame"
-	desc = "Fire a laser of holy fire at your target, setting them aflame. Deals increased damage to undead."
+	desc = "Launch a laser of holy fire at your target, setting them aflame. Deals increased damage to undead."
 	overlay_state = "sacredflame"
 	sound = 'sound/magic/bless.ogg'
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
