@@ -971,7 +971,9 @@
 	if(mode == NPC_AI_SLEEP && new_mode != NPC_AI_SLEEP)
 		GLOB.idle_mob_list -= src
 		GLOB.mob_living_list |= src
+		START_PROCESSING(SShumannpc, src)
 	else if(new_mode == NPC_AI_SLEEP)
+		STOP_PROCESSING(SShumannpc, src)
 		GLOB.mob_living_list -= src
 		GLOB.idle_mob_list |= src
 	mode = new_mode
