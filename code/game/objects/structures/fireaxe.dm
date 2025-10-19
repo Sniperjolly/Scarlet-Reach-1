@@ -226,7 +226,7 @@
 
 	else if(open || obj_broken)
 		if(istype(I, /obj/item/rogueweapon/sword/long/exe/cloth) && !heirloom)
-			var//obj/item/rogueweapon/sword/long/exe/cloth/F = I
+			var/obj/item/rogueweapon/sword/long/exe/cloth/F = I
 			if(F.wielded)
 				to_chat(user, "<span class='warning'>Unwield the [F.name] first.</span>")
 				return
@@ -246,7 +246,7 @@
 /obj/structure/fireaxecabinet/dungeoneer/update_icon()
 	cut_overlays()
 	if(heirloom)
-		add_overlay("axe_executioner")
+		add_overlay("fireaxe_executioner")
 	if(!open)
 
 		if(locked)
