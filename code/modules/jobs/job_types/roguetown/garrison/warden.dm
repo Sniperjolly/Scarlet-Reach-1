@@ -202,3 +202,87 @@
 	var/hoodchoice = input("Choose your Shroud.", "HOOD SELECTION") as anything in hoods
 	if(helmchoice != "None")
 		mask = hoods[hoodchoice]
+
+/datum/advclass/warden/arcane
+	name = "Arcane Warden"
+	tutorial = "A magically talented individual who volunteered for the wardens. You might have been a foreigner or a witch looking to get in the town's good graces, or an apprentice who liked practical work more than study."
+	outfit = /datum/outfit/job/roguetown/warden/ranger
+	category_tags = list(CTAG_WARDEN)
+
+	traits_applied = list(TRAIT_MAGEARMOR, TRAIT_ARCYNE_T2)
+	subclass_stats = list(
+		STATKEY_PER = 2,//7 points weighted, same as MAA. They get temp buffs in the woods instead of in the city.
+		STATKEY_SPD = 1, // swaps one speed for 2 intelligence for mage nonsense. Feel like END and PER are more core to the class's identity than SPD but am open to losing 1 PER for a 3rd INT
+		STATKEY_END = 1,
+		STATKEY_INT = 2
+	)
+
+	subclass_spellpoints = 15 //as per bounty, hand-level magic
+
+	subclass_skills = list(
+		/datum/skill/combat/bows = SKILL_LEVEL_NOVICE, // takes the worse of the two other subclass's weapon skills, except for journeyman knives
+		/datum/skill/combat/slings = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/crossbows = SKILL_EXP_NOVICE,
+		/datum/skill/combat/wrestling = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/unarmed = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/polearms = SKILL_LEVEL_APPRENTICE, // for that staff
+		/datum/skill/combat/axes = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/climbing = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/sneaking = SKILL_LEVEL_JOURNEYMAN, // again, worse of the other two subclasses
+		/datum/skill/misc/swimming = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/medicine = SKILL_LEVEL_APPRENTICE, // highest medicine of the wardens by 1
+		/datum/skill/craft/tanning = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/reading = SKILL_LEVEL_EXPERT, // lower than magician's apprentice, same as adventurer sorcerer
+		/datum/skill/misc/tracking = SKILL_LEVEL_EXPERT,
+		/datum/skill/craft/crafting = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/riding = SKILL_LEVEL_NOVICE,
+		/datum/skill/labor/butchering = SKILL_LEVEL_NOVICE,
+		/datum/skill/craft/alchemy = SKILL_LEVEL_APPRENTICE, // pretty low but I feel appropriate, at least let wardens brew some potions
+		/datum/skill/craft/carpentry = SKILL_LEVEL_NOVICE,
+		/datum/skill/craft/cooking = SKILL_LEVEL_NOVICE, // This should let them fry meat on fires.
+		/datum/skill/magic/arcane = SKILL_LEVEL_APPRENTICE, // Same level as Advisor Hand, as requested in bounty
+	)
+
+/datum/outfit/job/roguetown/warden/ranger/pre_equip(mob/living/carbon/human/H)
+	..()
+	neck = /obj/item/clothing/neck/roguetown/coif
+	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	backl = /obj/item/rogueweapon/woodstaff // get a fucking stick
+	beltr = /obj/item/reagent_containers/glass/bottle/rogue/manapot //get a manapotion
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
+	backpack_contents = list(
+		/obj/item/storage/keyring/guard = 1,
+		/obj/item/flashlight/flare/torch/lantern = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/recipe_book/alchemy = 1, // Hand subclass doesn't get alchemy manual or chalk, figured warden was more of a beginner class so deserved da book. Firewood if nothing else.
+	)
+
+	H.verbs |= /mob/proc/haltyell
+	H.set_blindness(0)
+
+	var/helmets = list(
+		"Path of the Woodsman"	= /obj/item/clothing/head/roguetown/helmet/bascinet/antler,
+		"Path of the Buck" 		= /obj/item/clothing/head/roguetown/helmet/bascinet/antler/snouted,
+		"Path of the Volf"		= /obj/item/clothing/head/roguetown/helmet/sallet/warden/wolf,
+		"Path of the Ram"		= /obj/item/clothing/head/roguetown/helmet/sallet/warden/goat,
+		"Path of the Bear"		= /obj/item/clothing/head/roguetown/helmet/sallet/warden/bear,
+		"Path of the Rous"		= /obj/item/clothing/head/roguetown/helmet/sallet/warden/rat,
+		"None"
+	)
+	var/helmchoice = input("Choose your Path.", "HELMET SELECTION") as anything in helmets
+	if(helmchoice != "None")
+		head = helmets[helmchoice]
+
+	var/hoods = list(
+		"Common Shroud" 	= /obj/item/clothing/head/roguetown/roguehood/warden,
+		"Antlered Shroud"		= /obj/item/clothing/head/roguetown/roguehood/warden/antler,
+		"None"
+	)
+	var/hoodchoice = input("Choose your Shroud.", "HOOD SELECTION") as anything in hoods
+	if(helmchoice != "None")
+		mask = hoods[hoodchoice]
+
