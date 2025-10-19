@@ -940,9 +940,13 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 /mob/living/simple_animal/proc/consider_wakeup()
 	for(var/datum/spatial_grid_cell/grid as anything in our_cells.member_cells)
 		if(length(grid.client_contents))
+			GLOB.mob_living_list |= src
+			GLOB.idle_mob_list -= src
 			toggle_ai(AI_ON)
 			return TRUE
 
+	GLOB.mob_living_list -= src
+	GLOB.idle_mob_list |= src
 	toggle_ai(AI_OFF)
 	return FALSE
 
@@ -996,6 +1000,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 /mob/living/simple_animal/proc/on_client_enter(datum/source, atom/target)
 	SIGNAL_HANDLER
 	if(AIStatus == AI_IDLE)
+		GLOB.mob_living_list |= src
+		GLOB.idle_mob_list -= src
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/proc/on_client_exit(datum/source, datum/exited)

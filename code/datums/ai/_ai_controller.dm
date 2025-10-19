@@ -235,12 +235,18 @@ have ways of interacting with a specific atom and control it. They posses a blac
 	if(ai_status == AI_STATUS_OFF)
 		return
 	if(should_idle())
+		if(isliving(pawn))
+			GLOB.mob_living_list -= pawn
+			GLOB.idle_mob_list |= pawn
 		set_ai_status(AI_STATUS_OFF)
 
 /datum/ai_controller/proc/on_client_enter(datum/source, atom/target)
 	SIGNAL_HANDLER
 	if(ai_status == AI_STATUS_OFF || ai_status == AI_STATUS_IDLE)
 		set_ai_status(get_expected_ai_status())
+		if(ai_status != AI_STATUS_OFF && isliving(pawn))
+			GLOB.idle_mob_list -= pawn
+			GLOB.mob_living_list |= pawn
 
 /datum/ai_controller/proc/on_client_exit(datum/source, datum/exited)
 	SIGNAL_HANDLER
@@ -279,6 +285,11 @@ have ways of interacting with a specific atom and control it. They posses a blac
 		GLOB.ai_controllers_by_zlevel[pawn_turf.z] -= src
 	if(ai_status)
 		GLOB.ai_controllers_by_status[ai_status] -= src
+	if(isliving(pawn))
+		var/mob/living/living_pawn = pawn
+		if(living_pawn.stat != DEAD && !(pawn in GLOB.mob_living_list))
+			GLOB.mob_living_list |= pawn
+			GLOB.idle_mob_list -= pawn
 	pawn.ai_controller = null
 	pawn = null
 	if(destroy)

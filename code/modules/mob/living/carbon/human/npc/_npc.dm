@@ -586,7 +586,7 @@
 				var/paine = get_complex_pain()
 				if(paine >= ((STAEND * 10)*0.9)) 
 					NPC_THINK("Ouch! Entering flee mode!")
-					mode = NPC_AI_FLEE
+					set_ai_mode(NPC_AI_FLEE)
 					m_intent = MOVE_INTENT_RUN
 					clear_path()
 					return TRUE
@@ -678,7 +678,7 @@
 	if(pulling)
 		stop_pulling()
 	myPath = list()
-	mode = NPC_AI_IDLE
+	set_ai_mode(NPC_AI_IDLE)
 	m_intent = MOVE_INTENT_WALK
 	target = null
 	a_intent = INTENT_HELP
@@ -858,7 +858,7 @@
 			if (!npc_detect_sneak(L, extra_chance))
 				return
 		NPC_THINK("Hunting [L]!")
-		mode = NPC_AI_HUNT
+		set_ai_mode(NPC_AI_HUNT)
 		// Interrupt ongoing actions on-hit, except for standing up or resisting.
 		if(!resisting && (mobility_flags & MOBILITY_STAND))
 			doing = FALSE
@@ -925,7 +925,7 @@
 		return
 
 	if(mode == NPC_AI_SLEEP)
-		mode = NPC_AI_IDLE
+		set_ai_mode(NPC_AI_IDLE)
 
 /mob/living/carbon/human/proc/on_client_exit(datum/source, datum/exited)
 	SIGNAL_HANDLER
@@ -961,11 +961,20 @@
 		if(length(grid.client_contents))
 			if(mode != NPC_AI_SLEEP || mode != NPC_AI_IDLE)
 				return TRUE
-			mode = NPC_AI_IDLE
+			set_ai_mode(NPC_AI_IDLE)
 			return TRUE
 
-	mode = NPC_AI_SLEEP
+	set_ai_mode(NPC_AI_SLEEP)
 	return FALSE
+
+/mob/living/carbon/human/proc/set_ai_mode(new_mode)
+	if(mode == NPC_AI_SLEEP && new_mode != NPC_AI_SLEEP)
+		GLOB.idle_mob_list -= src
+		GLOB.mob_living_list |= src
+	else if(new_mode == NPC_AI_SLEEP)
+		GLOB.mob_living_list -= src
+		GLOB.idle_mob_list |= src
+	mode = new_mode
 
 /mob/living/carbon/human/Moved()
 	. = ..()
