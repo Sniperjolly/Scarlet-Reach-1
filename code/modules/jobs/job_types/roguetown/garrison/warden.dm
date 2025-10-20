@@ -206,7 +206,7 @@
 /datum/advclass/warden/arcane
 	name = "Arcane Warden"
 	tutorial = "A magically talented individual who volunteered for the wardens. You might have been a foreigner or a witch looking to get in the town's good graces, or an apprentice who liked practical work more than study."
-	outfit = /datum/outfit/job/roguetown/warden/ranger
+	outfit = /datum/outfit/job/roguetown/warden/arcane
 	category_tags = list(CTAG_WARDEN)
 
 	traits_applied = list(TRAIT_MAGEARMOR, TRAIT_ARCYNE_T2)
@@ -245,7 +245,7 @@
 		/datum/skill/magic/arcane = SKILL_LEVEL_APPRENTICE, // Same level as Advisor Hand, as requested in bounty
 	)
 
-/datum/outfit/job/roguetown/warden/ranger/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/warden/arcane/pre_equip(mob/living/carbon/human/H)
 	..()
 	neck = /obj/item/clothing/neck/roguetown/coif
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
