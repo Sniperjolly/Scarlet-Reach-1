@@ -9,6 +9,7 @@
 	disallowed_races = list(
 		/datum/species/lamia,
 	)
+	allowed_patrons = NON_PSYDON_PATRONS
 	allowed_ages = ALL_AGES_LIST
 	tutorial = "The Grenzelhofts were known for their Jesters, wisemen with a tongue just as sharp as their wit. \
 		You command a position of a fool, envious of the position your superiors have upon you. \
