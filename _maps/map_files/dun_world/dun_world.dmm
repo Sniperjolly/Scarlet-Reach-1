@@ -3,6 +3,7 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
+/obj/item/toy/cards/deck/tarot,
 /turf/open/floor/carpet/stellar,
 /area/rogue/under/town/sewer)
 "aak" = (
@@ -8553,6 +8554,10 @@
 /obj/structure/plasticflaps,
 /turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/town/bath)
+"cvN" = (
+/obj/item/reagent_containers/powder/salt,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet)
 "cvU" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/hexstone,
@@ -24000,6 +24005,7 @@
 	},
 /obj/machinery/light/rogue/wallfire/candle/r,
 /obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/toy/cards/deck/tarot,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town/tavern)
 "gNJ" = (
@@ -33639,9 +33645,8 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/outdoors/town)
 "jut" = (
-/obj/item/reagent_containers/powder/salt,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/cave)
+/turf/closed/mineral/rogue/salt,
+/area/rogue/under/cavewet)
 "juB" = (
 /turf/closed/wall/mineral/rogue/wood,
 /area/rogue/outdoors/mountains)
@@ -38226,6 +38231,10 @@
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/garrison)
+"kJz" = (
+/obj/effect/decal/cleanable/food/salt,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet)
 "kJC" = (
 /obj/structure/bars/pipe{
 	dir = 4
@@ -41243,6 +41252,14 @@
 /obj/effect/spawner/lootdrop/roguetown/dungeon/tools,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/cave/skeletoncrypt)
+"lBG" = (
+/obj/structure/mineral_door/bars{
+	locked = 1;
+	lockid = "dungeon";
+	name = "SALT MINES"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave)
 "lBM" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -41759,6 +41776,11 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/rtfield/eora)
+"lIE" = (
+/obj/item/reagent_containers/powder/salt,
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave)
 "lIF" = (
 /obj/structure/boatbell,
 /turf/closed/wall/mineral/rogue/wooddark,
@@ -68945,6 +68967,9 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/outdoors/beach)
+"tnK" = (
+/turf/closed,
+/area/rogue/under/cave)
 "tnP" = (
 /obj/machinery/light/rogue/oven/south,
 /turf/open/floor/rogue/hexstone,
@@ -76901,6 +76926,11 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
+"vxR" = (
+/obj/effect/decal/cleanable/food/salt,
+/obj/item/reagent_containers/powder/salt,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet)
 "vxS" = (
 /obj/structure/fluff/railing/corner/north_east,
 /obj/structure/flora/hotspring_rocks/small/five{
@@ -181929,7 +181959,7 @@ gEZ
 rMd
 pJN
 oDW
-rCa
+tnK
 ogs
 ogs
 ogs
@@ -182833,9 +182863,9 @@ bUq
 pJN
 rKB
 oDW
-ecA
-toJ
-jut
+ogs
+lBG
+ogs
 hdI
 kZx
 rCa
@@ -183285,9 +183315,9 @@ ihW
 ihW
 oDW
 oDW
-ogs
-eMO
-ogs
+lIE
+toJ
+hdI
 ogs
 idG
 ogs
@@ -183733,11 +183763,11 @@ vFS
 eMU
 fXB
 ufO
-fXB
-fXB
-euv
+jut
+jut
+jut
 ogs
-rCa
+ecA
 hdI
 rCa
 ogs
@@ -184187,7 +184217,7 @@ fXB
 fXB
 fXB
 fXB
-fXB
+kJz
 ogs
 rCa
 rCa
@@ -184616,8 +184646,8 @@ miF
 miF
 bhJ
 bhJ
-bhJ
-bhJ
+pSr
+pSr
 miF
 fBB
 fBB
@@ -184635,10 +184665,10 @@ vFS
 vFS
 vFS
 ufO
-fXB
+vxR
 fXB
 ufO
-fXB
+euv
 fXB
 ogs
 qHj
@@ -185068,8 +185098,8 @@ bhJ
 bhJ
 bhJ
 bhJ
-bhJ
-bhJ
+pSr
+pSr
 miF
 miF
 miF
@@ -185516,12 +185546,12 @@ qPv
 bhJ
 bhJ
 bhJ
+pSr
+pSr
 bhJ
 bhJ
-bhJ
-bhJ
-bhJ
-bhJ
+pSr
+pSr
 miF
 miF
 miF
@@ -185968,8 +185998,8 @@ qPv
 bhJ
 bhJ
 bhJ
-bhJ
-bhJ
+pSr
+pSr
 svv
 svv
 svv
@@ -186875,16 +186905,16 @@ bhJ
 bhJ
 svv
 svv
-bhJ
-bhJ
+pSr
+pSr
 svv
 svv
 svv
 bhJ
 miF
 miF
-miF
-miF
+pSr
+pSr
 qHj
 qHj
 qHj
@@ -187326,17 +187356,17 @@ iTM
 dSz
 iTM
 svv
-bhJ
-bhJ
-bhJ
+pSr
+pSr
+pSr
 svv
 svv
 svv
 bhJ
 miF
 miF
-miF
-miF
+pSr
+pSr
 miF
 qHj
 qHj
@@ -187777,18 +187807,18 @@ iTM
 dSz
 iTM
 iTM
-bhJ
-bhJ
-bhJ
-bhJ
+pSr
+pSr
+pSr
+pSr
 svv
 svv
 svv
-bhJ
+pSr
+pSr
 miF
-miF
-miF
-miF
+pSr
+pSr
 qHj
 qHj
 miF
@@ -188230,21 +188260,21 @@ svv
 csA
 dSz
 aCJ
-bhJ
-bhJ
+pSr
+pSr
 svv
 svv
 svv
 svv
-bhJ
-miF
+pSr
+pSr
 miF
 miF
 miF
 qHj
 miF
-miF
-qHj
+pSr
+pSr
 qHj
 ogs
 vFS
@@ -188253,7 +188283,7 @@ vFS
 vFS
 vFS
 ufO
-fXB
+cvN
 fXB
 ogs
 lLC
@@ -188682,21 +188712,21 @@ fce
 iTM
 iTM
 iTM
-bhJ
-bhJ
+pSr
+pSr
 svv
 svv
 svv
 bhJ
-bhJ
-miF
+pSr
+pSr
 miF
 miF
 miF
 qHj
 miF
-miF
-qHj
+pSr
+pSr
 qHj
 ogs
 vFS
@@ -189135,9 +189165,9 @@ fce
 iTM
 iTM
 dSz
-bhJ
-bhJ
-bhJ
+pSr
+pSr
+pSr
 bhJ
 bhJ
 miF
@@ -189588,8 +189618,8 @@ fce
 iTM
 iTM
 iTM
-bhJ
-bhJ
+pSr
+pSr
 bhJ
 bhJ
 miF
@@ -190041,14 +190071,14 @@ iTM
 iTM
 dSz
 iTM
-bhJ
-bhJ
-bhJ
+pSr
+pSr
+pSr
 miF
 miF
 miF
-qHj
-qHj
+pSr
+pSr
 qHj
 qHj
 qHj
@@ -190493,14 +190523,14 @@ fce
 dSz
 iTM
 iTM
-bhJ
-bhJ
-bhJ
+pSr
+pSr
+pSr
 miF
 qHj
 qHj
-qHj
-qHj
+pSr
+pSr
 qHj
 qHj
 qHj
@@ -190945,7 +190975,7 @@ fce
 iTM
 iTM
 iTM
-bhJ
+pSr
 bhJ
 bhJ
 miF
@@ -190958,9 +190988,9 @@ qHj
 qHj
 qHj
 qHj
-qHj
+pSr
 ogs
-qHj
+pSr
 euv
 fXB
 ufO
@@ -191402,17 +191432,17 @@ bhJ
 bhJ
 miF
 miF
+pSr
+pSr
 qHj
 qHj
 qHj
 qHj
 qHj
 qHj
-qHj
-qHj
-qHj
-qHj
-qHj
+pSr
+pSr
+pSr
 ogs
 tTl
 euv
@@ -191854,17 +191884,17 @@ bhJ
 bhJ
 miF
 miF
-qHj
-qHj
+pSr
+pSr
 qHj
 icp
 xwL
 nEU
 pSm
 bfT
-qHj
-qHj
-qHj
+pSr
+pSr
+pSr
 ogs
 euv
 fXB
@@ -192306,8 +192336,8 @@ iTM
 bhJ
 miF
 miF
-qHj
-qHj
+pSr
+pSr
 icp
 dJq
 dJq
@@ -192315,8 +192345,8 @@ icp
 icp
 icp
 icp
-qHj
-qHj
+pSr
+pSr
 ogs
 ogs
 fXB
@@ -192768,8 +192798,8 @@ ehT
 ehT
 okc
 icp
-qHj
-bhJ
+pSr
+pSr
 ogs
 euv
 euv
@@ -193221,8 +193251,8 @@ ehT
 icp
 icp
 bfT
-miF
-bhJ
+pSr
+pSr
 ogs
 svv
 cqz
@@ -193673,8 +193703,8 @@ ehT
 icp
 dJq
 icp
-miF
-bhJ
+pSr
+pSr
 icp
 svv
 svv
@@ -194580,8 +194610,8 @@ dJq
 icp
 icp
 icp
-bhJ
-bhJ
+pSr
+pSr
 svv
 svv
 ogs
@@ -195031,9 +195061,9 @@ icp
 pSm
 bhJ
 bhJ
-bhJ
-bhJ
-bhJ
+pSr
+pSr
+pSr
 svv
 iTM
 svv
@@ -195481,10 +195511,10 @@ ehT
 dJq
 miF
 bhJ
+pSr
 bhJ
-bhJ
-bhJ
-bhJ
+pSr
+pSr
 svv
 iTM
 iTM
