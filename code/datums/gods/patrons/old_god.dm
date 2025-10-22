@@ -1,7 +1,8 @@
 /datum/patron/old_god
 	name = "Psydon"
-	domain = "God of Ontological Reality"
-	desc = "The true God of everything, Psydon is maximally good - He created humen in his image to live in Psydonia, and defended the Black Basin by sending the COMET SYON to defeat the rampaging archdemon."	
+	domain = "The primordial father of the gods, the uncreated, the God of Gods, God of Lux, God of Everything"
+	desc = "Psydon forged the world as a creative endeavor, a work of art, and made the Ten as His assistants in this task. He can only create, never destroy, and relies on His faithful to act as his vengeance. He created humen in His image to serve Him and carry out His will, fighting the traitor gods who rebelled against His vision out of vanity or insanity. It was taught that once the inhumen rebellion was over, humen faithful would be raised to heavenly beings to sit by His side in glory for eternity.  \n\ \n\
+		The Ten were created from aspects of Him and in Him is contained all of them in completeness, without corruption. Eora’s compassion is merely Psydon’s compassion, Ravox’s justice is merely Psydon’s justice, each fragmented and untempered by the wisdom of wholeness."	
 	worshippers = "Fanatics and Nostalgists"
 	associated_faith = /datum/faith/old_god
 	mob_traits = list(TRAIT_PSYDONIAN_GRIT)
