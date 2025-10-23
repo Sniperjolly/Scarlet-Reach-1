@@ -2275,9 +2275,6 @@
 /obj/structure/chair/bench/church/smallbench,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
-"aGM" = (
-/turf/closed/wall/mineral/rogue/wooddark/slitted,
-/area/rogue/indoors/town/cell)
 "aGW" = (
 /obj/structure/glowshroom,
 /obj/structure/vine,
@@ -50281,7 +50278,11 @@
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors)
 "obC" = (
-/turf/closed/wall/mineral/rogue/wooddark/window,
+/obj/structure/bars{
+	max_integrity = 2000;
+	name = "reinforced bars"
+	},
+/turf/open/water/cleanshallow,
 /area/rogue/indoors/town/cell)
 "obG" = (
 /obj/effect/decal/cobbleedge{
@@ -68967,9 +68968,6 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/outdoors/beach)
-"tnK" = (
-/turf/closed,
-/area/rogue/under/cave)
 "tnP" = (
 /obj/machinery/light/rogue/oven/south,
 /turf/open/floor/rogue/hexstone,
@@ -83670,9 +83668,6 @@
 /obj/structure/roguewindow/openclose,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town)
-"xpn" = (
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/town/cell)
 "xps" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/roguegrass,
@@ -176095,7 +176090,7 @@ oDW
 oDW
 ihW
 ihW
-prN
+obC
 ihW
 ogl
 ogl
@@ -177453,7 +177448,7 @@ prN
 aaB
 gEZ
 cLm
-prN
+obC
 eMU
 eMU
 leX
@@ -177897,7 +177892,7 @@ cxZ
 eMU
 eMU
 eMU
-prN
+obC
 wVQ
 aaB
 ecz
@@ -179692,8 +179687,8 @@ qHj
 vFS
 vFS
 vFS
-bVT
 vFS
+eMU
 ufO
 ufO
 aUn
@@ -181959,7 +181954,7 @@ gEZ
 rMd
 pJN
 oDW
-tnK
+toJ
 ogs
 ogs
 ogs
@@ -408874,9 +408869,9 @@ wBK
 prN
 fwB
 aaB
-prN
+oDW
 tIS
-prN
+oDW
 vBT
 vBT
 oDW
@@ -410233,7 +410228,7 @@ prN
 oDW
 oDW
 oDW
-prN
+vBT
 oDW
 vmi
 vmi
@@ -521873,13 +521868,13 @@ bGf
 bGf
 bGf
 oDW
-xpn
-obC
-xpn
-xpn
-xpn
-obC
-xpn
+oDW
+prN
+oDW
+oDW
+oDW
+prN
+prN
 oDW
 bGf
 bGf
@@ -522324,7 +522319,7 @@ bGf
 bGf
 bGf
 bGf
-xpn
+oDW
 uzl
 vey
 jcn
@@ -522332,7 +522327,7 @@ oDW
 krx
 wmj
 nMR
-xpn
+oDW
 bGf
 bGf
 bGf
@@ -522776,7 +522771,7 @@ bGf
 bGf
 bGf
 bGf
-obC
+prN
 aaB
 aaB
 aaB
@@ -522784,7 +522779,7 @@ wkD
 wmj
 dGa
 rIp
-obC
+prN
 vmi
 vmi
 vmi
@@ -523228,7 +523223,7 @@ vmi
 xuk
 qad
 qad
-xpn
+oDW
 oDW
 huA
 oDW
@@ -523236,7 +523231,7 @@ oDW
 uBr
 wmj
 hiz
-xpn
+oDW
 lMc
 lMc
 lMc
@@ -523680,7 +523675,7 @@ qad
 vVX
 vVX
 vVX
-xpn
+oDW
 tkW
 aaB
 oDW
@@ -523688,7 +523683,7 @@ eWP
 wmj
 wmj
 dot
-xpn
+oDW
 lMc
 lMc
 lMc
@@ -524140,7 +524135,7 @@ oDW
 chX
 eOB
 oQI
-xpn
+oDW
 lMc
 lMc
 lMc
@@ -524584,7 +524579,7 @@ vJa
 vJa
 vJa
 vJa
-obC
+oDW
 dfM
 aaB
 rIe
@@ -524592,7 +524587,7 @@ oDW
 rZL
 wmj
 wmj
-obC
+prN
 lMc
 lMc
 lMc
@@ -525044,7 +525039,7 @@ oDW
 ylD
 wmj
 uYC
-xpn
+oDW
 vmi
 vmi
 vmi
@@ -525489,13 +525484,13 @@ vmi
 vmi
 vmi
 oDW
-xpn
-obC
-xpn
-aGM
-xpn
-obC
-xpn
+oDW
+prN
+oDW
+oDW
+oDW
+prN
+oDW
 oDW
 vmi
 vmi
