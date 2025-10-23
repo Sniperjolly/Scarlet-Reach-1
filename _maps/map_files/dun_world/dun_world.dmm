@@ -12455,6 +12455,7 @@
 /obj/structure/rack/rogue,
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow,
 /obj/item/quiver/bolts,
+/obj/machinery/light/rogue/wallfire/candle/weak/r,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/cell)
 "dBO" = (
