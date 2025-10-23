@@ -433,7 +433,7 @@
 	)
 	allowed_patrons = ALL_DIVINE_PATRONS
 	outfit = /datum/outfit/job/roguetown/martyr
-	min_pq =  20
+	min_pq =  14
 	max_pq = null
 	round_contrib_points = 4
 	total_positions = 1
