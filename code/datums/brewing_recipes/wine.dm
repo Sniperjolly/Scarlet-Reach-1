@@ -94,10 +94,8 @@
     bottle_name = "luxintebere"
     bottle_desc = "A potentially heretickal brew, Lux, when fermented, breaks down into Vitae, which can further ferment into a delectable wine."
     reagent_to_brew = /datum/reagent/consumable/ethanol/luxwine
-    needed_reagents = list(/datum/reagent/water = 198) 
-    needed_items = list(/obj/item/reagent_containers/lux = 1, /obj/item/reagent_containers/food/snacks/sugar = 2, obj/item/alch/calendula = 4)
+    needed_reagents = list(/datum/reagent/water = 198)
+    needed_items = list(/obj/item/reagent_containers/lux = 1, /obj/item/reagent_containers/food/snacks/sugar = 2, /obj/item/alch/calendula = 2)
     brewed_amount = 2
     brew_time = 5 MINUTES
-    sell_value = 120 
-
-
+    sell_value = 120
