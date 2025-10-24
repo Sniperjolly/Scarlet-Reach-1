@@ -369,12 +369,27 @@
 	color = "#330038"
 	quality = DRINK_VERYGOOD
 
-/datum/reagent/consumable/ethanol/luxwine
+/datum/reagent/luxwine
 	name = "Luxintebere"
 	boozepwr = 80
 	taste_description = "a green numbness and then a burning vigor in the heart"
 	color = "#86CCA3"
-	quality = DRINK_VERYGOOD
+	quality = DRINK_FANTASTIC //having this should get you fragged so it should be worth the risk
+
+	overdose_threshold = 10
+	metabolization_rate = 0.1
+
+/datum/reagent/luxwine/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 0.25*REM)
+	M.adjustFireLoss(0.25*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/luxwine/on_mob_life(mob/living/carbon/M)
+	if(M.has_flaw(/datum/charflaw/addiction/junkie))
+		M.sate_addiction()
+	M.apply_status_effect(/datum/status_effect/buff/vitae)
+	..() //its still lux so it should still get you high
 
 // Elf Production - Berries & Herbal
 
