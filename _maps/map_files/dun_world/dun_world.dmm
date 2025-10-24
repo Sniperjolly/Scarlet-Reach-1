@@ -11065,6 +11065,7 @@
 /obj/item/leash/chain,
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
+/obj/item/natural/bundle/stick,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/cell)
 "dfN" = (
@@ -14724,6 +14725,12 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap/gunduzirak)
+"ehy" = (
+/obj/structure/pillory{
+	lockid = "warden"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "ehB" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1
@@ -26350,7 +26357,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	lockid = "dungeon";
 	locked = 1;
-	name = "Noble Cell";
+	name = "Storage";
 	dir = 8
 	},
 /turf/open/floor/rogue/cobble,
@@ -36805,6 +36812,12 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
+"kqp" = (
+/obj/structure/pillory{
+	lockid = "warden"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "kqs" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8
@@ -41775,9 +41788,8 @@
 /turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/rtfield/eora)
 "lIE" = (
-/obj/item/reagent_containers/powder/salt,
 /obj/machinery/light/rogue/torchholder/c,
-/turf/open/floor/rogue/naturalstone,
+/turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cave)
 "lIF" = (
 /obj/structure/boatbell,
@@ -50929,6 +50941,10 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
+"olu" = (
+/obj/item/reagent_containers/powder/salt,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave)
 "olz" = (
 /obj/structure/pillory{
 	lockid = list("church")
@@ -55804,7 +55820,9 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
 "pFC" = (
-/obj/structure/pillory,
+/obj/structure/pillory{
+	lockid = "warden"
+	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "pFG" = (
@@ -58221,6 +58239,10 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
+"qov" = (
+/obj/item/natural/bundle/stick,
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/town/cell)
 "qoy" = (
 /obj/structure/fluff/railing/fence,
 /obj/effect/decal/cobbleedge{
@@ -79704,7 +79726,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	lockid = "dungeon";
 	locked = 1;
-	name = "Dungeon";
+	name = "Dungeoneer's Quarters";
 	dir = 2
 	},
 /turf/open/floor/rogue/herringbone,
@@ -82693,6 +82715,11 @@
 "xbQ" = (
 /obj/structure/stairs/stone/d{
 	dir = 1
+	},
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	pixel_y = 1;
+	pixel_x = 1
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/cell)
@@ -182856,7 +182883,7 @@ eac
 oDW
 wOa
 bUq
-pJN
+qov
 rKB
 oDW
 ogs
@@ -183312,7 +183339,7 @@ ihW
 oDW
 oDW
 lIE
-toJ
+olu
 hdI
 ogs
 idG
@@ -256265,7 +256292,7 @@ eTA
 xkH
 xkH
 xkH
-jFA
+ehy
 jFA
 jFA
 jFA
@@ -257924,7 +257951,7 @@ rZO
 rZO
 bsL
 bsL
-rZO
+kqp
 bsL
 bsL
 hjw
@@ -408876,7 +408903,7 @@ oDW
 vBT
 vBT
 oDW
-iWa
+psu
 iWa
 iWa
 iWa
@@ -524588,7 +524615,7 @@ oDW
 rZL
 wmj
 wmj
-prN
+oDW
 lMc
 lMc
 lMc
@@ -525490,7 +525517,7 @@ prN
 oDW
 oDW
 oDW
-prN
+oDW
 oDW
 oDW
 vmi
