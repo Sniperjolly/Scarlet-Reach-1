@@ -369,6 +369,32 @@
 	color = "#330038"
 	quality = DRINK_VERYGOOD
 
+/datum/reagent/consumable/ethanol/luxwine
+	name = "Luxintebere"
+	boozepwr = 80
+    taste_description = "a green numbness, then a burning vigor in the heart"
+    color = "#86cca3"
+    quality = DRINK_VERYGOOD
+
+/datum/reagent/consumable/ethanol/luxwine/on_mob_life(mob/living/carbon/M)
+	var/list/wCount = M.get_wounds()
+	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
+		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM) 
+	else
+		M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_MAXIMUM)
+	if(wCount.len > 0)
+		M.heal_wounds(12) . 
+		M.update_damage_overlays()
+		if(prob(10))
+			to_chat(M, span_nicegreen("My wounds are sewn by lyfe force."))
+	M.adjustBruteLoss(-8, 0)
+	M.adjustFireLoss(-8, 0)
+	M.adjustOxyLoss(-15, 0)
+	for(var/obj/item/organ/organny in M.internal_organs)
+		M.adjustOrganLoss(organny.slot, -7)
+	..()
+	. = 1	/// Heals just as well as strong red but is more expensive as it requires lux and is brewn rather than made via alchemy.
+
 // Elf Production - Berries & Herbal
 
 /datum/reagent/consumable/ethanol/elfred
