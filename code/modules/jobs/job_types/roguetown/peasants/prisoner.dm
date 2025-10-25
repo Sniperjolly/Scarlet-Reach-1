@@ -519,6 +519,7 @@
 		H.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
+		ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	if(istype(H.patron, /datum/patron/divine/dendor))
 		H.adjust_skillrank(/datum/skill/magic/druidic, 3, TRUE)
 		to_chat(H, span_notice("As a follower of Dendor, you have innate knowledge of druidic magic."))

@@ -122,6 +122,7 @@
 			H.adjust_skillrank(/datum/skill/misc/music, 3, TRUE)
 			H.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
 			H.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE) // jessie we have to cook
+			ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 		if(/datum/patron/inhumen/graggar)
 			H.cmode_music = 'sound/music/combat_graggar.ogg'
 			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/grag, SLOT_HEAD, TRUE)
@@ -326,6 +327,7 @@
 			H.adjust_skillrank(/datum/skill/misc/music, 3, TRUE) 
 			H.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
 			H.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE) // Jessie we have to cook
+			ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 		if(/datum/patron/inhumen/graggar)
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/copper, SLOT_WEAR_MASK, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/cape/crusader, SLOT_CLOAK, TRUE)
