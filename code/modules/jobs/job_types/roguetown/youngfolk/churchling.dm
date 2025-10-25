@@ -67,19 +67,25 @@
 	C.grant_miracles(H, cleric_tier = CLERIC_T1, passive_gain = FALSE, devotion_limit = CLERIC_REQ_1)	//Capped to T1 miracles.
 	
 	// -- Start of section for god specific bonuses --
-	if(H.patron?.type == /datum/patron/inhumen/graggar)
+	if(H.patron?.type == /datum/patron/inhumen/graggar) // not going to lie, I have no idea why you're even allowed to be a heretic churchling but go off king
+		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	if(H.patron?.type == /datum/patron/inhumen/matthios)
 		H.grant_language(/datum/language/thievescant)
+		H.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 	if(H.patron?.type == /datum/patron/inhumen/zizo)
 		H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC)
 	if(H.patron?.type == /datum/patron/inhumen/baotha)
-		H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 	if(H.patron?.type == /datum/patron/divine/astrata)
 		H.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
 	if(H.patron?.type == /datum/patron/divine/dendor)

@@ -101,21 +101,36 @@
 			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/zcross/iron, SLOT_RING, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/cape/crusader, SLOT_CLOAK, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel, SLOT_WEAR_MASK, TRUE)
+			H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE) // zizo heretic already gets unique benefits, no reason to double down 
+			H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC)
 		if(/datum/patron/inhumen/matthios)
 			H.cmode_music = 'sound/music/combat_matthios.ogg'
 			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/matt, SLOT_HEAD, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/cape/crusader, SLOT_CLOAK, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel, SLOT_WEAR_MASK, TRUE)
+			H.grant_language(/datum/language/thievescant)
+			H.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE) //unlike wanderer, normal heretic can get these bonuses
 		if(/datum/patron/inhumen/baotha)
 			H.cmode_music = 'sound/music/combat_baotha.ogg'
 			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/bascinet/etruscan, SLOT_HEAD, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/cape/crusader, SLOT_CLOAK, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel, SLOT_WEAR_MASK, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/music, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE) // jessie we have to cook
 		if(/datum/patron/inhumen/graggar)
 			H.cmode_music = 'sound/music/combat_graggar.ogg'
 			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/grag, SLOT_HEAD, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/cape/crusader, SLOT_CLOAK, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel, SLOT_WEAR_MASK, TRUE)
+			ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+			H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE) //small benefit here, graggar's already good enough for a heavy armor heretic
+			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 //		if(/datum/patron/divine/astrata) // Just fuck off
 //			cloak = /obj/item/clothing/cloak/tabard/crusader/astrata
 //			id = /obj/item/clothing/neck/roguetown/psicross/astrata
@@ -295,18 +310,30 @@
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/copper, SLOT_WEAR_MASK, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/cape/crusader, SLOT_CLOAK, TRUE)
 			H.cmode_music = 'sound/music/combat_heretic.ogg'
+			H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE) // zizo heretic already gets unique benefits, no reason to double down 
+			H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC)
 		if(/datum/patron/inhumen/matthios)
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/copper, SLOT_WEAR_MASK, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/cape/crusader, SLOT_CLOAK, TRUE)
 			H.cmode_music = 'sound/music/combat_matthios.ogg'
+			H.grant_language(/datum/language/thievescant) // heretic wanderer is already flavorful enough for Matthios, don't want them to be too cracked and completely invalidate knave and outlaw
 		if(/datum/patron/inhumen/baotha)
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/copper, SLOT_WEAR_MASK, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/cape/crusader, SLOT_CLOAK, TRUE)
 			H.cmode_music = 'sound/music/combat_baotha.ogg'
+			H.adjust_skillrank(/datum/skill/misc/music, 3, TRUE) 
+			H.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE) // Jessie we have to cook
 		if(/datum/patron/inhumen/graggar)
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/copper, SLOT_WEAR_MASK, TRUE)
 			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/cape/crusader, SLOT_CLOAK, TRUE)
 			H.cmode_music = 'sound/music/combat_graggar.ogg'
+			ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+			H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE) // heretics get improved versions, don't want to go too overboard though
+			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 //		if(/datum/patron/divine/astrata)
 //			id = /obj/item/clothing/neck/roguetown/psicross/astrata
 //			H.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
