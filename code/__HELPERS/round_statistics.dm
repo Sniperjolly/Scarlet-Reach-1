@@ -142,6 +142,7 @@
 #define STATS_ABYSSOR_REMEMBERED "abyssor_remembered"
 #define STATS_LEECHES_EMBEDDED "leeches_embedded"
 #define STATS_PEOPLE_DROWNED "people_drowned"
+#define STATS_BATHS_TAKEN "baths_taken"
 
 //Eora
 #define STATS_KISSES_MADE "kisses_made"
