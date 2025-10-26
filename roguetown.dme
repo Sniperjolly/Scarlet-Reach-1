@@ -1493,6 +1493,7 @@
 #include "code\modules\farming\plough.dm"
 #include "code\modules\farming\produce.dm"
 #include "code\modules\farming\seeds.dm"
+#include "code\modules\farming\shellplant.dm"
 #include "code\modules\farming\soil.dm"
 #include "code\modules\farming\tools.dm"
 #include "code\modules\farming\trash.dm"
