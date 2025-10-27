@@ -134,6 +134,7 @@
 				return
 
 		// remove one instance and deliver it
+		record_round_statistic(STATS_PEDDLER_REVENUE, held_items[O]["PRICE"])
 		held_items -= O
 		if(!usr.put_in_hands(O))
 			O.forceMove(get_turf(src))
