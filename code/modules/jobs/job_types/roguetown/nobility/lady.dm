@@ -18,7 +18,7 @@
 	display_order = JDO_LADY
 	give_bank_account = 50
 	noble_income = 22
-	min_pq = 20
+	min_pq = 10
 	max_pq = null
 	round_contrib_points = 3
 
