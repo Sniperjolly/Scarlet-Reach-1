@@ -36,7 +36,7 @@
 
 /obj/effect/proc_holder/spell/invoked/bud
 	name = "Eoran Bloom"
-	desc = ""
+	desc = "Grow an Eoran bud upon the target's head, pacifying them."
 	clothes_req = FALSE
 	range = 7
 	overlay_state = "love"
@@ -74,6 +74,7 @@
 
 /obj/effect/proc_holder/spell/invoked/eoracurse
 	name = "Eora's Curse"
+	desc = "Call upon Eora to apply sense-altering effects to your target."
 	overlay_state = "curse2"
 	releasedrain = 50
 	chargetime = 30

@@ -1,5 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt/sacred_flame_rogue
 	name = "Sacred Flame"
+	desc = "Launch a laser of holy fire at your target, setting them aflame. Deals increased damage to undead."
 	overlay_state = "sacredflame"
 	sound = 'sound/magic/bless.ogg'
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
@@ -85,6 +86,7 @@
 
 /obj/effect/proc_holder/spell/invoked/revive
 	name = "Anastasis"
+	desc = "Call upon Her greatness to return lyfe to a dead target. Obliterates the undead."
 	overlay_state = "revive"
 	releasedrain = 90
 	chargedrain = 0
@@ -200,6 +202,7 @@
 //T0. Removes cone vision for a dynamic duration.
 /obj/effect/proc_holder/spell/self/astrata_gaze
 	name = "Astratan Gaze"
+	desc = "Call upon your patron to improve your sight to 360-degrees."
 	overlay_state = "astrata_gaze"
 	releasedrain = 10
 	chargedrain = 0
