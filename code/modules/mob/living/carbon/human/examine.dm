@@ -124,26 +124,28 @@
 		if(observer_privilege || get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
 			creampie = has_status_effect(/datum/status_effect/facial/internal)
 		if(facial && creampie)
-			var/facial_wet_or_dry = !facial?.has_dried_up ? "glazed with [facial?.splashed_by]'s" : "plastered with [facial?.splashed_by]'s"
-			var/creampie_wet_or_dry = !creampie?.has_dried_up ? "dripping out [creampie?.splashed_by]'s" : "stained with [creampie?.splashed_by]'s"
+			var/facial_wet_or_dry = !facial?.has_dried_up ? "glazed" : "plastered"
+			var/creampie_wet_or_dry = !creampie?.has_dried_up ? "dripping out" : "stained with"
+			var/marked_by = facial?.splashed_by
 			var/we_wet_or_dry = facial?.has_dried_up && creampie?.has_dried_up ? "dried cum" : "cum" // only show dried if both status are set to dry
 			if(user != src && isliving(user))
 				var/mob/living/L = user
-				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [facial_wet_or_dry] and [creampie_wet_or_dry] [we_wet_or_dry]!") : span_warning("[m1] covered in something glossy!")
+				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [facial_wet_or_dry] [marked_by]'s and [creampie_wet_or_dry] [marked_by]'s [we_wet_or_dry]!") : span_warning("[m1] covered in something glossy!")
 			else
 				. += span_aiprivradio("[m1] [facial_wet_or_dry] and [creampie_wet_or_dry] [we_wet_or_dry]!")
 		else if(facial)
-			var/wet_or_dry = !facial?.has_dried_up ? "glazed with [facial?.splashed_by]'s' cum" : "plastered with [facial?.splashed_by]'s dried cum"
+			var/wet_or_dry = !facial?.has_dried_up ? "glazed with" : "plastered with dried cum"
+			var/marked_by = facial?.splashed_by
 			if(user != src && isliving(user))
 				var/mob/living/L = user
-				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [wet_or_dry]!") : span_warning("[m1] smeared with something glossy!")
+				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [marked_by]'s [wet_or_dry]!") : span_warning("[m1] smeared with something glossy!")
 			else
 				. += span_aiprivradio("[m1] [wet_or_dry]!")
 		else if(creampie)
-			var/wet_or_dry = !creampie?.has_dried_up ? "dripping out [creampie?.splashed_by]'s cum" : "stained with [creampie?.splashed_by]'s dried cum"
+			var/wet_or_dry = !creampie?.has_dried_up ? "dripping out cum" : "stained with dried cum"
 			if(user != src && isliving(user))
 				var/mob/living/L = user
-				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [wet_or_dry]!") : span_warning("[m1] letting out some glossy stuff!")
+				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [marked_by]'s [wet_or_dry]!") : span_warning("[m1] letting out some glossy stuff!")
 			else
 				. += span_aiprivradio("[m1] [wet_or_dry]!")
 
