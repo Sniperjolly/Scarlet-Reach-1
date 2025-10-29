@@ -256,19 +256,19 @@
 	set_target(new_target)
 	show_ui()
 
-/datum/sex_controller/proc/cum_onto(var/mob/living/carbon/human/splashed_user = null)
+/datum/sex_controller/proc/cum_onto(var/mob/living/carbon/human/splashed_user = null, var/mob/living/carbon/human/splashing_user = null)
 	log_combat(user, target, "Came onto the target")
 	playsound(target, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(target))
 	if(splashed_user)
 		var/datum/status_effect/facial/facial = splashed_user.has_status_effect(/datum/status_effect/facial)
 		if(!facial)
-			splashed_user.apply_status_effect(/datum/status_effect/facial)
+			splashed_user.apply_status_effect(/datum/status_effect/facial, splashed_by = splashing_user)
 		else
 			facial.refresh_cum()
 	after_ejaculation()
 
-/datum/sex_controller/proc/cum_into(oral = FALSE, var/mob/living/carbon/human/splashed_user = null)
+/datum/sex_controller/proc/cum_into(oral = FALSE, var/mob/living/carbon/human/splashed_user = null, var/mob/living/carbon/human/splashing_user = null)
 	log_combat(user, target, "Came inside the target")
 	if(oral)
 		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
@@ -292,6 +292,7 @@
 	alert_type = null // don't show an alert on screen
 	tick_interval = 12 MINUTES // use this time as our dry count down
 	var/has_dried_up = FALSE // used as our dry status
+	var/mob/living/carbon/human/splashed_by = null
 
 /datum/status_effect/facial/internal
 	id = "creampie"
@@ -301,6 +302,7 @@
 /datum/status_effect/facial/on_apply()
 	RegisterSignal(owner, list(COMSIG_COMPONENT_CLEAN_ACT, COMSIG_COMPONENT_CLEAN_FACE_ACT),PROC_REF(clean_up))
 	has_dried_up = FALSE
+	splashed_by = null
 	return ..()
 
 /datum/status_effect/facial/on_remove()

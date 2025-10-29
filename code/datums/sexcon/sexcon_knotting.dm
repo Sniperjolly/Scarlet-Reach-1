@@ -328,13 +328,13 @@
 		if(top.sexcon.knotted_part_partner&(SEX_PART_CUNT|SEX_PART_ANUS)) // use top's knotted_part_partner var to check what effect we need to apply, as bottom may be double knotted or more
 			var/datum/status_effect/facial/internal/creampie = btm.has_status_effect(/datum/status_effect/facial/internal)
 			if(!creampie)
-				btm.apply_status_effect(/datum/status_effect/facial/internal)
+				btm.apply_status_effect(/datum/status_effect/facial/internal, splashed_by = knotted_owner)
 			else
 				creampie.refresh_cum()
 		if(top.sexcon.knotted_part_partner&SEX_PART_JAWS)
 			var/datum/status_effect/facial/facial = btm.has_status_effect(/datum/status_effect/facial)
 			if(!facial)
-				btm.apply_status_effect(/datum/status_effect/facial)
+				btm.apply_status_effect(/datum/status_effect/facial, splashed_by = knotted_owner)
 			else
 				facial.refresh_cum()
 	knot_exit(keep_top_status, keep_btm_status)
