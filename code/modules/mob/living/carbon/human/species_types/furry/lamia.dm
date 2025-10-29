@@ -25,6 +25,8 @@
 //	custom_clothes = TRUE
 	soundpack_m = /datum/voicepack/male
 	soundpack_f = /datum/voicepack/female
+	var/heat_mod = 0.9 // very slightly resistant
+	var/cold_mod = 1.2 //only half cold blooded
 	offset_features = list(
 		OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
 		OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
@@ -275,3 +277,32 @@
 
 /datum/species/lamia/spec_fully_heal(mob/living/carbon/human/H)
 	H.Lamiaze()
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lamia_scale
+	slot_flags = null
+	name = "lamia's tail scales"
+	desc = ""
+	icon_state = null
+	body_parts_covered = FEET|LEGS|TAIL_LAMIA
+	body_parts_inherent = FEET|LEGS|TAIL_LAMIA
+	armor = list("blunt" = 90, "slash" = 90, "stab" = 50, "piercing" = 50, "fire" = 0, "acid" = 0) //for reference studded leather is 80 blunt, 80 slash, 60 stab, 20 piercing. Heavy gamb is 80, 50, 50, 80, Helps to compensate for no feet or leg slots!
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_PEEL, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST)
+	blocksound = SOFTHIT
+	surgery_cover = FALSE
+	blade_dulling = DULLING_BASHCHOP
+	sewrepair = FALSE
+	max_integrity = 200 // studded leather has 300, this heals when you sleep like harpy but faster to compensate for greater max integrity
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lamia_scale/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lamia_scale/dropped(mob/living/carbon/human/user)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lamia_scale/obj_destruction()
+	visible_message("The scales on the tail are torn!", span_bloody("<b>THE SCALES ON MY TAIL ARE TORN!!</b>"))

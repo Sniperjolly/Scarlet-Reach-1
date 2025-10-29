@@ -18,6 +18,7 @@
 		LIPS,
 		HAIR,
 	)
+	inherent_traits = list(TRAIT_NASTY_EATER, TRAIT_NOSTINK)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	attack_verb = "slash"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -28,6 +29,7 @@
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male/elf
 	soundpack_f = /datum/voicepack/female/elf
+	var/cold_mod = 0.9 //furry
 	use_f = TRUE
 	custom_clothes = TRUE
 	clothes_id = "dwarf"

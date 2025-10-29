@@ -19,6 +19,8 @@
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male/elf
 	soundpack_f = /datum/voicepack/female/elf
+	var/heat_mod = 0.8 // cold blood
+	var/cold_mod = 1.5 // cold blooded
 	use_f = TRUE
 	custom_clothes = TRUE
 	clothes_id = "dwarf"
@@ -34,7 +36,7 @@
 		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,-4), OFFSET_UNDIES_F = list(0,-4), \
 		)
-	race_bonus = list(STAT_FORTUNE = 1)
+	race_bonus = list(STAT_FORTUNE = 1, STAT_CONSTITUTION = 1) //fortune is a shit stat so kobolds get double buffed
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -170,3 +172,32 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = second_color
 	return returned
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lizard_scale //the exact same as lizardfolk, no reason to rebalance it
+	slot_flags = null
+	name = "lizard's scales"
+	desc = ""
+	icon_state = null
+	body_parts_covered = COVERAGE_FULL
+	body_parts_inherent = COVERAGE_FULL
+	armor = list("blunt" = 30, "slash" = 50, "stab" = 50, "piercing" = 20, "fire" = 0, "acid" = 20) //same as rumia tats but far less durable and doesn't self-regenerate. Bonus acid resist because why the hell not
+//	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_PEEL, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST) this is full cover so you can still crit through it
+	blocksound = SOFTHIT
+	blade_dulling = DULLING_BASHCHOP
+	surgery_cover = FALSE
+	sewrepair = FALSE
+	max_integrity = 200 // rumia tats have 400, studded leather has 300, this heals when you sleep like harpy but faster to compensate for greater max integrity
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lizard_scale/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lizard_scale/dropped(mob/living/carbon/human/user)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lizard_scale/obj_destruction()
+	visible_message("The scales are torn!", span_bloody("<b>THE SCALES ARE TORN!!</b>"))

@@ -134,6 +134,22 @@
 			to_chat(human_owner, "I can feel the skin on my feet mend...")
 		else if((harpy_skin.obj_integrity >= harpy_skin.max_integrity) && harpy_skin.obj_broken)
 			harpy_skin.obj_broken = FALSE
+	if(islamia(owner))
+		var/obj/item/clothing/suit/roguetown/armor/skin_armor/lamia_scale = human_owner.skin_armor
+		if(lamia_scale.obj_integrity < lamia_scale.max_integrity)
+			lamia_scale.obj_integrity += 25
+			to_chat(human_owner, "I can feel the scales on my tail mend...")
+		else if((lamia_scale.obj_integrity >= lamia_scale.max_integrity) && lamia_scale.obj_broken)
+			lamia_scale.obj_broken = FALSE
+	if(islizard(owner))
+		var/obj/item/clothing/suit/roguetown/armor/skin_armor/lizard_scale = human_owner.skin_armor
+		if(lizard_scale.obj_integrity < lizard_scale.max_integrity)
+			lizard_scale.obj_integrity += 25
+			to_chat(human_owner, "I can feel my scales mend...")
+		else if((lizard_scale.obj_integrity >= lizard_scale.max_integrity) && lizard_scale.obj_broken)
+			lizard_scale.obj_broken = FALSE
+
+
 
 /atom/movable/screen/alert/status_effect/asleep
 	name = "Asleep"

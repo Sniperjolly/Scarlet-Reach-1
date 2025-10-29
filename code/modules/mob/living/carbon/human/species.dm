@@ -606,7 +606,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/num_arms = H.get_num_arms(FALSE)
 	var/num_legs = H.get_num_legs(FALSE)
 	var/is_harpy = isharpy(H)
-//	var/is_lamia = !!H.get_lamian_tail()
+	var/is_lamia = islamia(H)
 
 	switch(slot)
 		if(SLOT_HANDS)
@@ -693,7 +693,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(SLOT_SHOES)
 			if(H.shoes)
 				return FALSE
-			if(is_nudist || is_inhumen || is_harpy) // || is_lamia
+			if(is_nudist || is_inhumen || is_harpy || is_lamia)
 				return FALSE
 			if( !(I.slot_flags & ITEM_SLOT_SHOES) )
 				return FALSE
@@ -738,6 +738,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_PANTS)
 			if(H.wear_pants)
+				return FALSE
+			if(is_lamia)
 				return FALSE
 			if(is_nudist)
 				return FALSE

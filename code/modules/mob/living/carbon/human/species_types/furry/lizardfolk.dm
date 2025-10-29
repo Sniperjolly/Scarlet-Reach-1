@@ -22,6 +22,8 @@
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male
 	soundpack_f = /datum/voicepack/female
+	var/heat_mod = 0.8 // cold blood
+	var/cold_mod = 1.5 // cold blooded
 	offset_features = list(
 		OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
 		OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
@@ -160,3 +162,32 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = second_color
 	return returned
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lizard_scale
+	slot_flags = null
+	name = "lizard's scales"
+	desc = ""
+	icon_state = null
+	body_parts_covered = COVERAGE_FULL
+	body_parts_inherent = COVERAGE_FULL
+	armor = list("blunt" = 30, "slash" = 50, "stab" = 50, "piercing" = 20, "fire" = 0, "acid" = 20) //same as rumia tats but far less durable and doesn't self-regenerate. Bonus acid resist because why the hell not
+//	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_PEEL, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST) this is full cover so you can still crit through it
+	blocksound = SOFTHIT
+	blade_dulling = DULLING_BASHCHOP
+	surgery_cover = FALSE
+	sewrepair = FALSE
+	max_integrity = 200 // rumia tats have 400, studded leather has 300, this heals when you sleep like harpy but faster to compensate for greater max integrity
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lizard_scale/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lizard_scale/dropped(mob/living/carbon/human/user)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
+
+/obj/item/clothing/suit/roguetown/armor/skin_armor/lizard_scale/obj_destruction()
+	visible_message("The scales are torn!", span_bloody("<b>THE SCALES ARE TORN!!</b>"))
