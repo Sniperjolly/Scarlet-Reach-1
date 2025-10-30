@@ -264,8 +264,8 @@
 		var/datum/status_effect/facial/facial = splashed_user.has_status_effect(/datum/status_effect/facial)
 		if(!facial)
 			splashed_user.apply_status_effect(/datum/status_effect/facial)
-			/mob/living/carbon/human  
-			var/list/glazings += world.time = list(splashing_user.realname)
+			/mob/living/carbon/human/splashed_user
+			var/list/glazings += (world.time = list(splashing_user.realname))
 		else
 			facial.refresh_cum()
 	after_ejaculation()
@@ -283,8 +283,8 @@
 		var/datum/status_effect/facial/splashed_type = splashed_user.has_status_effect(status_type)
 		if(!splashed_type)
 			splashed_user.apply_status_effect(status_type)
-			/mob/living/carbon/human  
-			var/list/glazings = list(world.time += list(splashing_user.realname))
+			/mob/living/carbon/human/splashed_user
+			var/list/glazings += (world.time = list(splashing_user.realname))
 		else
 			splashed_type.refresh_cum()
 	after_ejaculation()
