@@ -126,7 +126,7 @@
 		if(facial && creampie)
 			var/facial_wet_or_dry = !facial?.has_dried_up ? "glazed" : "plastered"
 			var/creampie_wet_or_dry = !creampie?.has_dried_up ? "dripping out" : "stained with"
-			var/marked_by = facial?.splashed_by
+			var/marked_by = var/mob/living/carbon/human/src (var/list/glazings)
 			var/we_wet_or_dry = facial?.has_dried_up && creampie?.has_dried_up ? "dried cum" : "cum" // only show dried if both status are set to dry
 			if(user != src && isliving(user))
 				var/mob/living/L = user

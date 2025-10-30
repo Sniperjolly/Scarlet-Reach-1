@@ -148,3 +148,5 @@
 
 	/// Assoc list of culinary preferences of the mob
 	var/list/culinary_preferences = list()
+
+	var/list/glazings = list()

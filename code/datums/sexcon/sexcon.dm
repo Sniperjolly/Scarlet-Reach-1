@@ -263,7 +263,9 @@
 	if(splashed_user)
 		var/datum/status_effect/facial/facial = splashed_user.has_status_effect(/datum/status_effect/facial)
 		if(!facial)
-			splashed_user.apply_status_effect(/datum/status_effect/facial, splashed_by = splashing_user)
+			splashed_user.apply_status_effect(/datum/status_effect/facial)
+			/mob/living/carbon/human  
+			var/list/glazings += world.time = list(splashing_user.realname)
 		else
 			facial.refresh_cum()
 	after_ejaculation()
@@ -281,6 +283,8 @@
 		var/datum/status_effect/facial/splashed_type = splashed_user.has_status_effect(status_type)
 		if(!splashed_type)
 			splashed_user.apply_status_effect(status_type)
+			/mob/living/carbon/human  
+			var/list/glazings = list(world.time += list(splashing_user.realname))
 		else
 			splashed_type.refresh_cum()
 	after_ejaculation()
@@ -292,7 +296,6 @@
 	alert_type = null // don't show an alert on screen
 	tick_interval = 12 MINUTES // use this time as our dry count down
 	var/has_dried_up = FALSE // used as our dry status
-	var/mob/living/carbon/human/splashed_by = null
 
 /datum/status_effect/facial/internal
 	id = "creampie"
@@ -302,7 +305,6 @@
 /datum/status_effect/facial/on_apply()
 	RegisterSignal(owner, list(COMSIG_COMPONENT_CLEAN_ACT, COMSIG_COMPONENT_CLEAN_FACE_ACT),PROC_REF(clean_up))
 	has_dried_up = FALSE
-	splashed_by = null
 	return ..()
 
 /datum/status_effect/facial/on_remove()
