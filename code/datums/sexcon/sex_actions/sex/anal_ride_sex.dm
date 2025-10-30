@@ -37,6 +37,7 @@
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] cums into [user]'s butt!"))
 		target.sexcon.cum_into(splashed_user = user)
+		GLOB.cum_marked[user.real_name] += ", [target.real_name]'s"
 		target.virginity = FALSE
 
 	if(target.sexcon.considered_limp())

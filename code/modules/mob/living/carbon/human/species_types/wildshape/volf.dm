@@ -44,6 +44,7 @@
 		TRAIT_HARDDISMEMBER, //Decapping Volfs causes them to bug out, badly, and need admin intervention to fix. Bandaid fix.
 		TRAIT_PIERCEIMMUNE, //Prevents weapon dusting and caltrop effects due to them transforming when killed/stepping on shards.
 		TRAIT_LONGSTRIDER,
+		TRAIT_SMELLMARK,
 		TRAIT_PERFECT_TRACKER //This should be the 'scout' form
 	)
 	inherent_biotypes = MOB_HUMANOID

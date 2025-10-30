@@ -334,7 +334,7 @@
 		if(top.sexcon.knotted_part_partner&SEX_PART_JAWS)
 			var/datum/status_effect/facial/facial = btm.has_status_effect(/datum/status_effect/facial)
 			if(!facial)
-				btm.apply_status_effect(/datum/status_effect/facial, splashed_by = knotted_owner)
+				btm.apply_status_effect(/datum/status_effect/facial)
 			else
 				facial.refresh_cum()
 	knot_exit(keep_top_status, keep_btm_status)

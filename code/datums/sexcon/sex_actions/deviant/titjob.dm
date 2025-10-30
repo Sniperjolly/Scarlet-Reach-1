@@ -32,6 +32,10 @@
 	playsound(user, 'sound/misc/mat/fingering.ogg', 20, TRUE, -2, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
+	if(target.sexcon.check_active_ejaculation())
+		target.visible_message(span_love("[user] ejaculates onto [target]'s tits!"))
+		target.sexcon.cum_into(oral = TRUE, splashed_user = user)
+		GLOB.cum_marked[target.real_name] += ", [user.real_name]'s"
 
 	user.sexcon.handle_passive_ejaculation(target)
 

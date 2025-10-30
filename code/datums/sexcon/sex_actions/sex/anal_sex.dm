@@ -41,7 +41,8 @@
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s butt!"))
-		user.sexcon.cum_into(splashed_user = target, splashing_user = user)
+		user.sexcon.cum_into(splashed_user = target)
+		GLOB.cum_marked[target.real_name] += ", [user.real_name]'s"
 		user.virginity = FALSE
 
 	if(user.sexcon.considered_limp())
@@ -87,6 +88,7 @@
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s butt!"))
 		user.sexcon.cum_into(splashed_user = target)
+		GLOB.cum_marked[target.real_name] += ", [user.real_name]'s"
 		user.virginity = FALSE
 
 	if(user.sexcon.considered_limp())

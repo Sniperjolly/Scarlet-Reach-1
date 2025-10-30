@@ -48,6 +48,7 @@
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s holes at the same time!"))
 		user.sexcon.cum_into(splashed_user = target)
+		GLOB.cum_marked[target.real_name] += ", [user.real_name]'s"
 		user.try_impregnate(target)
 		user.virginity = FALSE
 		target.virginity = FALSE

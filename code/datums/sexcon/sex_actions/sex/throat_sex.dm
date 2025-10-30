@@ -50,6 +50,7 @@
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into(oral = TRUE, splashed_user = target) // give facial status effect for the target, considering this was rough throat sex
+		GLOB.cum_marked[target.real_name] += ", [user.real_name]'s"
 		user.virginity = FALSE
 
 	if(user.sexcon.considered_limp())
@@ -96,6 +97,7 @@
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into(oral = TRUE, splashed_user = target) // give facial status effect for the target, considering this was rough throat sex
+		GLOB.cum_marked[target.real_name] += ", [user.real_name]'s"
 		user.virginity = FALSE
 
 	if(user.sexcon.considered_limp())

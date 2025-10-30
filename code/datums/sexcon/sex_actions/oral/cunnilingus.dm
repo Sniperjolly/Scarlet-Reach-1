@@ -33,6 +33,7 @@
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] ejaculates into [user]'s mouth!"))
 		target.sexcon.cum_into(oral = TRUE, splashed_user = user)
+		GLOB.cum_marked[user.real_name] += ", [target.real_name]'s"
 
 /datum/sex_action/cunnilingus/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] stops sucking [target]'s clit ..."))
