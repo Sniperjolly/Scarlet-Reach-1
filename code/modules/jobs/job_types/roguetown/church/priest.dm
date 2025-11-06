@@ -52,15 +52,18 @@ GLOBAL_LIST_EMPTY(heretical_players)
 	name = "Bishop"
 	tutorial = "The Divine is all that matters in a world of the immoral. \
 	The Weeping God abandoned us, and in his stead the TEN rule over us mortals--and you will preach their wisdom to any who still heed their will. The faithless are growing in number. \
-	It is up to you to shepherd them toward a Gods-fearing future; for you are a Bishop of the Holy See."
+	It is up to you to shepherd them toward a Gods-fearing future; for you are a Bishop of the Holy See. \
+	You worked your way up as an acolyte in the Reach or were appointed from out of town by the See. \
+	Either way you are one of the most educated people in the Duchy and your faith is informed by years of study and service."
 	outfit = /datum/outfit/job/roguetown/priest/basic
 	category_tags = list(CTAG_BISHOP)
 
 	subclass_stats = list(
-		STATKEY_INT = 3,
+		STATKEY_INT = 4,
 		STATKEY_END = 2,
 		STATKEY_STR = -1,
-		STATKEY_CON = -1,
+		STATKEY_CON = 1,
+		STATKEY_LCK = 2,
 		STATKEY_SPD = -1
 	)
 
@@ -70,13 +73,56 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		/datum/skill/combat/polearms = SKILL_LEVEL_MASTER,
 		/datum/skill/misc/reading = SKILL_LEVEL_LEGENDARY,
 		/datum/skill/misc/medicine = SKILL_LEVEL_EXPERT,
-		/datum/skill/craft/cooking = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/craft/cooking = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/craft/crafting = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/sewing = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/labor/farming = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/sewing = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/labor/farming = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/magic/holy = SKILL_LEVEL_MASTER,
-		/datum/skill/craft/alchemy = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/craft/alchemy = SKILL_LEVEL_EXPERT,
 	)
+
+/datum/advclass/wpriest
+	name = "Warrior Priest"
+	tutorial = "The Weeping God has left us, and in his stead the TEN rule over us mortals. The Divine is all that matters in a world besieged by evil. \
+	The task of holding back the forces of darkness falls to you; for you are a Warrior of the Holy See \
+	You were a templar of much renown and found yourself leading forces of increasing size as you proved your faith and strength in arms. \
+	You underwent a course of study in one of Astrata's holy orders that prepared you to preach, and were approved by the Holy See to guide this embattled region's faithful."
+	outfit = /datum/outfit/job/roguetown/priest/warrior
+	category_tags = list(CTAG_BISHOP)
+
+	traits_applied = list(TRAIT_HEAVYARMOR)
+	subclass_stats = list( // 1 more total stat than the priest but 4 fewer than the Templar, don't want them picked by fraggers as a 'super templar'
+		STATKEY_END = 2,
+		STATKEY_STR = 1,
+		STATKEY_CON = 2,
+		STATKEY_SPD = -1,
+		STATKEY_INT = 2
+	)
+
+	subclass_skills = list(
+		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/maces = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/whipsflails = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/axes = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/crossbows = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/bows = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/unarmed = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/polearms = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/misc/reading = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/medicine = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/craft/cooking = SKILL_LEVEL_NOVICE,
+		/datum/skill/craft/crafting = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/misc/sewing = SKILL_LEVEL_NOVICE,
+		/datum/skill/labor/farming = SKILL_LEVEL_NOVICE,
+		/datum/skill/magic/holy = SKILL_LEVEL_EXPERT,
+		/datum/skill/craft/alchemy = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/shields = SKILL_LEVEL_JOURNEYMAN,
+	)
+
+
 
 /datum/outfit/job/roguetown/priest
 	job_bitflag = BITFLAG_CHURCH
@@ -119,7 +165,59 @@ GLOBAL_LIST_EMPTY(heretical_players)
 	H.verbs |= /mob/living/carbon/human/proc/completesermon
 	H.verbs |= /mob/living/carbon/human/proc/change_miracle_set
 
-//	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)		- You are literally disinherited. Begone......
+
+/datum/outfit/job/roguetown/priest/warrior/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.adjust_blindness(-3)
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+	belt = /obj/item/storage/belt/rogue/leather/plaquegold
+	beltr = /obj/item/storage/keyring/priest
+	beltl = /obj/item/storage/belt/rogue/pouch/coins/rich
+	backr = /obj/item/storage/backpack/rogue/satchel
+	gloves = /obj/item/clothing/gloves/roguetown/chain
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	neck = /obj/item/clothing/neck/roguetown/bevor
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/full/holysee
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
+	pants = /obj/item/clothing/under/roguetown/platelegs/holysee
+	cloak = /obj/item/clothing/cloak/holysee
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/holysee
+	r_hand = /obj/item/rogueweapon/scabbard/sword
+	backpack_contents = list(
+		/obj/item/rogueweapon/huntingknife/idagger/holysee = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+	)
+
+	H.cmode_music = 'sound/music/combat_holy.ogg'
+	if(H.age == AGE_OLD)
+		H.adjust_skillrank_up_to(/datum/skill/magic/holy, 5, TRUE)
+	var/datum/devotion/C = new /datum/devotion(H, H.patron) // This creates the cleric holder used for devotion spells
+	C.grant_miracles(H, cleric_tier = CLERIC_T4, passive_gain = CLERIC_REGEN_MAJOR, start_maxed = TRUE)	//Starts off maxed out.
+
+	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
+	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate //your button against clergy
+	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
+	H.verbs |= /mob/living/carbon/human/proc/churchpriestcurse //snowflake priests button. Will not sacrifice them
+	H.verbs |= /mob/living/carbon/human/proc/churcheapostasy //punish the lamb reward the wolf
+	H.verbs |= /mob/living/carbon/human/proc/completesermon
+	// H.verbs |= /mob/living/carbon/human/proc/change_miracle_set gotta nerf these lads somehow, less int and less non-combat skills doesn't feel like enough, and neither does 1 less miracle skill
+
+	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
+
+/datum/outfit/job/roguetown/priest/warrior/choose_loadout(mob/living/carbon/human/H)
+	. = ..()
+	var/weapons = list("Eclipsum Longsword","Eclipsum Halbred","Solar Judgement")
+	var/weapon_choice = input(H,"Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+	switch(weapon_choice)
+		if("Eclipsum Longsword")
+			H.put_in_hands(new /obj/item/rogueweapon/sword/long/holysee(H), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		if("Eclipsum Halbred")
+			H.put_in_hands(new /obj/item/rogueweapon/halberd/holysee(H), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+		if("Solar Judgement")
+			H.put_in_hands(new /obj/item/rogueweapon/sword/long/exe/astrata(H), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 
 /datum/job/priest/vice //just used to change the priest title
 	title = "Vice Priest"
